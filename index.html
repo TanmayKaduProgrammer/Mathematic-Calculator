@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF and LCM</title>
+</head>
+<body>
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    body{
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+    button{
+      background-color: aqua;
+     font-weight:bolder;
+    }
+    #second,#second-lcm{
+      width: 200px;
+    }
+    #hcf-sec{
+      background:linear-gradient(#41a7d2 0%,#70d60a 100%);
+      padding-top: 100px;
+    }
+    #lcm-sec{
+      background:linear-gradient(#bad98c 0%,#d98c8c 100%);
+    }
+    #div-sec{
+      background:linear-gradient(#ff00f7 0%,#00ccff 100%);
+    }
+    #calc-sec{
+      background:linear-gradient(#4a05eb 0%,#02cab3 100%);
+    }
+    #Remainder{
+      background:linear-gradient(#01f4b7 0%,#f4d301 100%);
+    }
+    a{
+      width:300px;
+      text-decoration: none;
+      font: size 20px;
+      color:rgb(23, 157, 190);
+    }
+    hr{
+      width: 100px;
+    }
+    pre{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header{
+      background-color:yellow;
+      position: fixed;
+      height: 50px;
+      width:100%;
+      text-align: center;
+    }
+     </style>
+     <header>
+       <pre>
+<a href="#hcf-sec">HCF Calculator</a>   <a href="#lcm-sec">LCM Calculator</a>   <a href="#div-sec">Divisibles Calculator</a>   <a href="#calc-sec">Calculator</a>    <a href="#Remainder">Remainder Finder</a>
+       </pre>
+     </header>
+  <section id="hcf-sec">
+    <h1><b>HCF Calculator</b></h1>
+    <br>
+    <br>
+  <input type="number" id="first" placeholder="Enter the first number"><br>
+  <br>
+  <input type="number" id="second" placeholder="Enter the second number"><br>
+  <br>
+  <button onclick="get()">Get The Answer</button><br>
+  <br>
+  <p id="hcf">HCF will be displayed here</p>
+  <br>
+  <br>
+</section>
+<br>
+<br>
+  <section id="lcm-sec">
+    <h1><b>LCM Calculator</b></h1>
+    <br>
+    <br>
+  <input type="number" id="first-lcm" placeholder="Enter the first number"><br>
+  <br>
+  <input type="number" id="second-lcm" placeholder="Enter the second number"><br>
+  <br>
+  <button onclick="getlcm()">Get The Answer</button><br>
+  <br>
+  <p id="lcm">LCM will be displayed here</p>
+  <br>
+  <br>
+  </section><br>
+  <br>
+  <br>
+  <br>
+  <section id="div-sec">
+    <br>
+    <br>
+    <center>
+      <h1>Find Divisibles</h1>
+    <input id="in" placeholder="Enter the number"><br>
+    <br>
+<button id="find" onclick="find()">Find Divisibles</button><br>
+<br>
+<p id=divisibles></p>
+<script type="text/javascript">
+var divide = [];
+	function find(){
+		var n;
+		n = document.getElementById('in').value;
+		for (var i = 1; i <= n; i++) {
+			if(n%i==0)
+			{
+            divide.push(i); 
+			}
+		}
+    document.getElementById("divisibles").innerHTML=divide;
+	}
+</script>
+</center>
+<br>
+<br>
+  </section>
+  <br>
+  <br>
+  <section id="calc-sec">
+    <br>
+    <br>
+    <h1>Calculator</h1>  <br>
+    <br>
+    <input type="number" id="fst" placeholder="Enter the first number"><br>
+    <br>
+    <input type="number" id="scd" placeholder="Enter the second number"><br>
+    <br>
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>  <br>
+    <br>
+    <p id="total">The result will be displayed here</p>
+    <script>
+        var f;
+        var s;
+        function add(){
+f = Number(document.getElementById("fst").value);
+s = Number(document.getElementById("scd").value);
+var sum = f+s;
+document.getElementById("fst").value=sum;
+document.getElementById("scd").value="";
+document.getElementById("total").innerHTML=sum;
+        }
+        function subtract(){
+f = Number(document.getElementById("fst").value);
+s = Number(document.getElementById("scd").value);
+var diff = f-s;
+document.getElementById("fst").value=diff;
+document.getElementById("scd").value="";
+document.getElementById("total").innerHTML=diff;
+        }
+        function multiply(){
+f = Number(document.getElementById("fst").value);
+s = Number(document.getElementById("scd").value);
+var mul = f*s;
+document.getElementById("fst").value=mul;
+document.getElementById("scd").value="";
+document.getElementById("total").innerHTML=mul;
+        }
+        function divide(){
+f = Number(document.getElementById("fst").value);
+s = Number(document.getElementById("scd").value);
+var div = f/s;
+document.getElementById("fst").value=div;
+document.getElementById("scd").value="";
+document.getElementById("total").innerHTML=div;
+        }
+    </script>
+    <br>
+    <br>
+  </section>
+  <br>
+  <br>
+  <section id="Remainder">
+    <h1>Remainder Calculator</h1><br>
+    <br>
+    <input type="number" id="dividend" placeholder="Enter the dividend"><br>
+    <br>
+    <input type="number" id="divisor" placeholder="Enter the divisor"><br>
+    <br>
+    <button onclick="remain()">Find Remainder</button><br>
+    <br>
+    <p id="display-remainder">Remainder will be displayed here</p>
+    <br>
+    <br>
+    <script>
+      var fir;
+      var sec;
+      var rem;
+      function remain(){
+        fir = Number(document.getElementById("dividend").value);
+        sec = Number(document.getElementById("divisor").value);
+        rem = Number(fir%sec);
+        document.getElementById("display-remainder").innerHTML=rem;
+      }
+    </script>
+  </section>
+<script>
+  function get(){
+  var f;
+  var se;
+  var lcm=[];
+  var fst=[];
+  var scd=[];
+  var cmn=[];
+  f = Number(document.getElementById("first").value);
+  se = Number(document.getElementById("second").value);
+  for (var i=0;i<=f;i++){
+    if (f%i==0){
+      fst.push(i);
+    }
+  }
+  for (var s=0;s<=se;s++){
+    if(se%s==0){
+      scd.push(s);
+    }
+  }
+  for (var v=0;v<=scd.length;v++){
+    var r = scd[v];
+    if(fst.includes(r)){
+      cmn.push(r);
+    }
+  }
+  document.getElementById("hcf").innerHTML=cmn[cmn.length-1];
+}
+function getlcm(){
+  var fi;
+  var se;
+  var lcm=[];
+  fi = Number(document.getElementById("first-lcm").value);
+  se = Number(document.getElementById("second-lcm").value);
+  for (var i=1;i<=fi*se;i++){
+    if(i%fi==0){
+      if(i%se==0){
+         lcm.push(i);
+         document.getElementById("lcm").innerHTML=lcm[0];
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
