@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCF and LCM</title>
+    <title>Mathematical Calculator</title>
 </head>
 <body>
   <style>
@@ -22,6 +22,21 @@
     #second,#second-lcm{
       width: 200px;
     }
+    #prime{
+      background:linear-gradient(#01f4b7 0%,#f4d301 100%);
+    }
+    #percent{
+      background:linear-gradient(#4a05eb 0%,#02cab3 100%);
+    }
+    #sct{
+      background:linear-gradient(#ff00f7 0%,#00ccff 100%);
+    }
+    #asc{
+      background:linear-gradient(#bad98c 0%,#d98c8c 100%);
+    }
+    #power{
+      background:linear-gradient(#41a7d2 0%,#70d60a 100%);
+    }
     #hcf-sec{
       background:linear-gradient(#41a7d2 0%,#70d60a 100%);
       padding-top: 100px;
@@ -38,11 +53,17 @@
     #Remainder{
       background:linear-gradient(#01f4b7 0%,#f4d301 100%);
     }
+    #roots{
+      background:linear-gradient(#f40101 0%,#ff00d4 100%);
+    }
     a{
       width:300px;
       text-decoration: none;
-      font: size 20px;
+      font-size:15px;
       color:rgb(23, 157, 190);
+    }
+    #scti{
+      width: 300px;
     }
     hr{
       width: 100px;
@@ -60,7 +81,7 @@
      </style>
      <header>
        <pre>
-<a href="#hcf-sec">HCF Calculator</a>   <a href="#lcm-sec">LCM Calculator</a>   <a href="#div-sec">Divisibles Calculator</a>   <a href="#calc-sec">Calculator</a>    <a href="#Remainder">Remainder Finder</a>
+<a href="#hcf-sec">HCF Calculator</a>     <a href="#lcm-sec">LCM Calculator</a>     <a href="#div-sec">Divisibles Calculator</a>     <a href="#calc-sec">Calculator</a>      <a href="#Remainder">Remainder Finder</a>     <a href="#roots">Square and Cube Roots</a>     <a href="#power">Power</a>     <a href="#asc">Ascending and Descending</a>     <a href="#sct">Sin, Cos, Tan</a>     <a href="#percent">Percentage</a>     <a href="#prime">Prime or Composite</a>
        </pre>
      </header>
   <section id="hcf-sec">
@@ -95,7 +116,6 @@
   </section><br>
   <br>
   <br>
-  <br>
   <section id="div-sec">
     <br>
     <br>
@@ -103,12 +123,12 @@
       <h1>Find Divisibles</h1>
     <input id="in" placeholder="Enter the number"><br>
     <br>
-<button id="find" onclick="find()">Find Divisibles</button><br>
+<button id="find" onclick="finddiv()">Find Divisibles</button><br>
 <br>
 <p id=divisibles></p>
 <script type="text/javascript">
-var divide = [];
-	function find(){
+	function finddiv(){
+    var divide = [];
 		var n;
 		n = document.getElementById('in').value;
 		for (var i = 1; i <= n; i++) {
@@ -135,7 +155,7 @@ var divide = [];
     <br>
     <input type="number" id="scd" placeholder="Enter the second number"><br>
     <br>
-    <button onclick="add()">Add</button>
+    <button onclick="addnum()">Add</button>
     <button onclick="subtract()">Subtract</button>
     <button onclick="multiply()">Multiply</button>
     <button onclick="divide()">Divide</button>  <br>
@@ -144,7 +164,7 @@ var divide = [];
     <script>
         var f;
         var s;
-        function add(){
+        function addnum(){
 f = Number(document.getElementById("fst").value);
 s = Number(document.getElementById("scd").value);
 var sum = f+s;
@@ -182,7 +202,9 @@ document.getElementById("total").innerHTML=div;
   </section>
   <br>
   <br>
-  <section id="Remainder">
+  <section id="Remainder"><br>
+    <br>
+    <br>
     <h1>Remainder Calculator</h1><br>
     <br>
     <input type="number" id="dividend" placeholder="Enter the dividend"><br>
@@ -206,6 +228,210 @@ document.getElementById("total").innerHTML=div;
       }
     </script>
   </section>
+  <br>
+  <br>
+  <section id="roots"><br>
+    <br>
+    <br>
+    <h1><b>Square and Cube Roots</b></h1>
+    <br>
+    <br>
+    <input id="no" placeholder="Enter the number" type="number"><br>
+    <br>
+    <br>
+    <button onclick="rootsf()">Get the Answer</button>
+    <br>
+    <br>
+    <p id="sr">Square Root will be displayed here</p>
+    <br>
+    <p id="cr">Cube Root will be displayed here</p>
+    <br>
+    <br>
+    <script>
+      function rootsf(){
+        var no = Number(document.getElementById("no").value);
+        var sqr = Math.sqrt(no);
+        var cbr = Math.cbrt(no);
+        document.getElementById("sr").innerHTML=sqr;
+        document.getElementById("cr").innerHTML=cbr;
+      }
+    </script>
+  </section><br>
+  <br>
+  <br>
+  <section id="power"><br>
+    <br>
+    <br>
+        <h1><b>Power Calculator</b></h1><br>
+        <br>
+        <input id="powerof" type="number" placeholder="Enter Power of">
+        <br>
+        <br>
+        <br>
+        <input id="pow" type="number" placeholder="Enter Power"><br>
+        <br>
+        <br>
+        <button onclick="calcpow()">Get Answer</button><br>
+        <br>
+        <br>
+        <p id="res">Answer will be displayed here</p>
+        <br>
+        <script>
+          function calcpow(){
+            var of;
+            var po;
+            of = Number(document.getElementById("powerof").value);
+            po = Number(document.getElementById("pow").value);
+            var power = Math.pow(of,po)
+            document.getElementById("res").innerHTML=power;
+          }
+        </script>
+  </section><br>
+  <br>
+  <section id="asc"><br>
+    <br>
+    <h1>Ascending and Descending</h1><br>
+    <input type="number" id="numbers" placeholder="Enter the number">  <br>
+    <br>
+    <button onclick="add()">Add the number</button>  <br>
+    <br>
+    <button onclick="find()">Get Order</button><br>
+    <p id="ord"></p>
+    <br>
+    <br>
+    <script>
+      var number=[];
+var inp;
+var num;
+var d=[];
+var asc;
+var desc;
+function add(){
+    inp=document.getElementById("numbers").value;
+    num=Number(inp);
+    number.push(num);
+    d.push(num);
+}
+function find(){
+    number.sort(function(a, b){return a - b});
+    asc=number;
+    d.sort(function(a, b){return b - a});
+    desc=d;
+    document.getElementById("ord").innerHTML="Ascending : "+asc+" "+"Descending : "+d;
+}
+    </script>
+  </section><br>
+  <br>
+  <section id="sct">
+    <br>
+    <h1>Sin, Cos, Tan</h1><br>
+    <br>
+     <input id="scti" type="number" placeholder="Enter the number who's Sin, Cos, Tan, you want to find"><br>
+     <br>
+     <button onclick="give()">Calculate</button><br>
+     <br>
+     <p id="resct">Degree</p><br>
+     <p id="radian">Radian</p>
+     <br>
+     <br>
+     <script>
+       function give(){
+         var inp = Number(document.getElementById("scti").value);
+         function tan(degrees) {
+         return Math.tan(degrees * Math.PI / 180);
+         }
+         function sin(degreess) {
+         return Math.sin(degreess * Math.PI / 180);
+         }
+         function cos(degreesc) {
+         return Math.cos(degreesc * Math.PI / 180);
+         }
+        var sina = sin(inp);
+        var cosa = cos(inp);
+        var tana = tan(inp);
+        var stan = Math.tan(inp);
+        var ssin = Math.sin(inp);
+        var scos = Math.cos(inp);
+        document.getElementById("resct").innerHTML="Sin - "+sina+"  "+"Cos - "+cosa+"  "+"Tan - "+tana;
+        document.getElementById("radian").innerHTML="Sin - "+ssin+"  "+"Cos - "+scos+"  "+"Tan - "+stan;
+       }
+     </script>
+  </section><br>
+  <br>
+  <section id="percent"><br>
+<br>
+<h1>Percentage</h1><br>
+<br>
+<input id="nosd" placeholder="Enter the number" type="number"><br>
+<br>
+<input id="totalsd" type="number" placeholder="Enter the total number"><br>
+<br>
+<button onclick="percent()">Calculate</button><br>
+<br>
+<p id="per"></p><br>
+<br>
+<p id="perof"></p><br>
+<br>
+<p id="pernum"></p><br>
+<br>
+  </section><br>
+  <br>
+  <script>
+    function percent(){
+      var num = Number(document.getElementById("nosd").value);
+      var total = Number(document.getElementById("totalsd").value);
+      var per = (num/total)*100;
+      var perof = (num/100)*total;
+      var pernum = num*100/total;
+      document.getElementById("per").innerHTML=per+"%";
+      document.getElementById("perof").innerHTML=num+" % of "+total+" is "+perof;
+      document.getElementById("pernum").innerHTML=num+" is "+total+" % "+"of "+pernum;
+    }
+  </script>
+  <section id="prime"><br>
+    <br>
+<h1>Prime Number Or Composite</h1><br>
+<br>
+<input type="number" id="primei" placeholder="Enter the Number"><br>
+<br>
+<button onclick="prime()">Check</button><br>
+<br>
+<p id="pornot"></p><br>
+<br>
+<script>
+  function prime(){
+  var n = Number(document.getElementById("primei").value);
+if (n%2==0||n%3==0||n%5==0||n%7==0){
+if(n!=2){
+  if(n!=3){
+    if(n!=5){
+      if(n!=7){
+        document.getElementById("pornot").innerHTML="Composite Number";
+        }
+        else{
+    document.getElementById("pornot").innerHTML="Prime Number";
+  }
+      }
+      else{
+    document.getElementById("pornot").innerHTML="Prime Number";
+  }
+    }
+    else{
+    document.getElementById("pornot").innerHTML="Prime Number";
+  }
+  }
+  else{
+    document.getElementById("pornot").innerHTML="Prime Number";
+  }
+}
+else{
+    document.getElementById("pornot").innerHTML="Prime Number";
+  } 
+}
+</script>
+  </section><br>
+  <br>
+  <section id="divisiblesornot"></section>
 <script>
   function get(){
   var f;
